@@ -1,0 +1,20 @@
+Doctor-Appointment-Booking-Appointment-System
+create backend folder
+
+step 1.server setup
+npm init-y pachkage.json file create
+1.setup project install packages express,mongoose,nodemon,cors,dotenv
+2.app.js , .env and .gitignorefile create on root folder
+3.src folder create
+4.package.json folder  "type": "module" and script add
+  "scripts": {
+   "start":"nodemon app.js",
+   "dev":"nodemon app.js"
+  },
+  5.setup is completed.
+
+
+step 2.git add
+1.git init
+2.git add .
+3.git commit -m "server setup is completed"
