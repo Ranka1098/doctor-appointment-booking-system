@@ -29,3 +29,7 @@ step 4.Rest Api create
 1.user schema created
 2.register route create
 3.login route create
+4.register user ke password ko bcrypt se password ko hash kare
+5.login user ke password ko bcrypt se password ko compare kare
+6.password compare kene ke baad jwt.sing se token create kare
+7.token ko cookie me set kare
