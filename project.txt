@@ -24,3 +24,8 @@ step 3.server create
 2.create cluster for project
 3.mongooge url me project ka folder name add karna
 4.create folder structure inside src folder - config,controller,middleware,models,routes
+
+step 4.Rest Api create
+1.user schema created
+2.register route create
+3.login route create
