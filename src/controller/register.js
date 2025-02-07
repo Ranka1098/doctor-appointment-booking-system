@@ -12,7 +12,7 @@ const register = async (req, res) => {
     //   check user all ready exist or not
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ messeage: "user all ready exists" });
+      return res.status(400).json({ messeage: "user email all ready exists" });
     }
 
     // password ko hash kare
