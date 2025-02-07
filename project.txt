@@ -83,3 +83,7 @@ Token को Verify किया
 ✅ Secure API Calls – कोई भी अनजान व्यक्ति Data Access नहीं कर सकता
 ✅ Role-Based Access – Admin और User अलग-अलग चीज़ें देख सकते हैं
 ✅ Token-Based System – User को बार-बार Login करने की जरूरत नहीं पड़ती
+
+
+step 6.logout api route create karna
+1.logout route ke under hum cookie ko clear kar denge jisme hum httpOnly ,secure or sameSite attribute use karenge
