@@ -3,8 +3,7 @@ import userModel from "../models/user.js";
 const getuser = async (req, res) => {
   try {
     // user ka id lo
-    const { userId } = req.body;
-    console.log("userId", userId);
+    const userId = req.userId;
 
     // check user id existe or not
     if (!userId) {

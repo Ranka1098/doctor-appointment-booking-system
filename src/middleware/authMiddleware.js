@@ -11,15 +11,11 @@ const authMiddleware = async (req, res, next) => {
       return res.status(404).json({ message: "token not found" });
     }
     // token ko verify karo
-    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
-      if (err) {
-        return res.status(401).json({ message: "invalid" });
-      }
-      // token sahi to user id ke saath jod do
-      req.body.userId = decoded.id;
-      // allow next api call
-      next();
-    });
+    const decoded = jwt.verify(token, SECRET_KEY);
+    // token sahi to user id ke saath jod do
+    req.userId = decoded.id;
+    // allow next api call
+    next();
   } catch (error) {
     res.status(500).json({ message: "auth failed" });
   }
