@@ -31,6 +31,7 @@ const login = async (req, res) => {
     const token = jwt.sign({ id: user._id }, SECRET_KEY, {
       expiresIn: "7d",
     });
+
     // token ko cookie me set kare
     res.cookie("token", token, {
       httpOnly: true,

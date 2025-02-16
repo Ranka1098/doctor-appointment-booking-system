@@ -3,19 +3,22 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const authMiddleware = async (req, res, next) => {
+  const SECRET_KEY = process.env.SECRET_KEY;
   try {
-    // token ko request headers se lena
+    // 1.get token
     const token = req.headers["authorization"]?.split(" ")[1];
-    // check token
-    if (!token) {
-      return res.status(404).json({ message: "token not found" });
-    }
-    // token ko verify karo
-    const decoded = jwt.verify(token, SECRET_KEY);
-    // token sahi to user id ke saath jod do
-    req.userId = decoded.id;
-    // allow next api call
-    next();
+
+    // 2.verify token
+    jwt.verify(token, SECRET_KEY, (err, decode) => {
+      if (err) {
+        console.error("JWT Verify Error:", err.message);
+
+        return res.status(401).json({ message: "auth failed" });
+      } else {
+        req.body.userId = decode.id;
+        next();
+      }
+    });
   } catch (error) {
     res.status(500).json({ message: "auth failed" });
   }
