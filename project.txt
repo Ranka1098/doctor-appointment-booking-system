@@ -93,4 +93,6 @@ setp 7.agar user model ka schema hum dekhe to yaha per koi object nahi banaya ji
 1.user model ke under hum admin or doctor ka object banayenge jisse pata chal sake jis ne login kiya wo admin hai ya doctor hai
 2.hum ne isAdmin , isDoctor , notification or seennotification ka object banaya hai
 3.database ke under jitne existing user hai unko delete kar denge.
-4.admin ke naam se new register karenge.
+4.admin ke naam se new register karenge. or new user bhi register karenge kyu ki dono seprate menu frontend me show karne hai.
+5.get user api hai uske user.password ko undefiend karenge kyu ki humko frontend me  user ka password show  nahi karna hai.
+
