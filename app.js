@@ -4,6 +4,7 @@ dotenv.config();
 import connectDB from "./src/config/databse.js";
 import cors from "cors";
 import authRouter from "./src/routes/auth.js";
+import doctorRouter from "./src/routes/doctorRouter.js";
 // connect to server
 const app = express();
 
@@ -15,6 +16,7 @@ const PORT = process.env.PORT;
 
 // -----------------------routes-----------------------------
 app.use("/", authRouter);
+app.use("/", doctorRouter);
 
 connectDB()
   .then(() => {
