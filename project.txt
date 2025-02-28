@@ -142,3 +142,10 @@ findByIdAndUpdate(adminUser._id, { notification })
 8.सक्सेस मैसेज भेजना 
 res.status(201).json({...})
 यह क्लाइंट (फ्रंटएंड) को कन्फर्मेशन देता है कि डॉक्टर अकाउंट अप्लाई हो गया।
+
+step 10.notification ko get karenge.
+1.notification get karne ke liye notification controller create karenge
+2.uska method post rahega
+notification ka new route create karenge , jo middleware se authorised hoga
+notification.post("/get-all-notification", authorization , getAllNotification)
+

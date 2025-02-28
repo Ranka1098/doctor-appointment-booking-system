@@ -39,13 +39,20 @@ const applyDoctor = async (req, res) => {
       data: {
         doctorId: newDoctor._id, // नए डॉक्टर की ID, जिससे उसे डाटाबेस में पहचाना जा सके।
         name: newDoctor.firstName + " " + newDoctor.lastName, // डॉक्टर का पूरा नाम।
-        onClickPath: "/getuser",
+        onClickPath: "/doctor",
         // अगर एडमिन इस नोटिफिकेशन पर क्लिक करे, तो "/getuser" पेज खुलेगा, जिससे वह डॉक्टर की जानकारी देख सके।
       },
     });
 
     // 6.अपडेटेड नोटिफिकेशन एडमिन के अकाउंट में सेव करना
-    await userModel.findByIdAndUpdate(adminUser._id, { notification });
+    await userModel.findByIdAndUpdate(
+      adminUser._id,
+      { notification },
+      { new: true }
+    );
+
+    const updatedAdmin = await userModel.findById(adminUser._id);
+    console.log("Updated Admin Data:", updatedAdmin.notification);
     // यह एडमिन के यूज़र डेटा को अपडेट करता है ताकि नए नोटिफिकेशन सेव हो जाएँ।
 
     // 7 सक्सेस मैसेज भेजना
