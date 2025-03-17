@@ -52,7 +52,6 @@ const applyDoctor = async (req, res) => {
     );
 
     const updatedAdmin = await userModel.findById(adminUser._id);
-    console.log("Updated Admin Data:", updatedAdmin.notification);
     // यह एडमिन के यूज़र डेटा को अपडेट करता है ताकि नए नोटिफिकेशन सेव हो जाएँ।
 
     // 7 सक्सेस मैसेज भेजना

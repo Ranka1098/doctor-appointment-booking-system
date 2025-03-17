@@ -149,3 +149,20 @@ step 10.notification ko get karenge.
 notification ka new route create karenge , jo middleware se authorised hoga
 notification.post("/get-all-notification", authorization , getAllNotification)
 
+step 11.notification ko delte karenge
+1.user model se user ko id se get karenge
+2.notifcation or seennotifcation ko empty kar denge.
+
+step 12.get all doctor or user ko get karenge
+1.get all doctor karenge doctor model se or usko ek controller banayenge
+2.get all user karenge user model se or usko ek controller banayenge
+
+step 15.doctor ko approve karna.
+1.user ki id check karenge same account se multiple user nahi hone chahiye.
+2.approve doctor new route controller create karenge.
+
+step 16.single doctor ki profile ko get karna uske id jo doctor model ke under hai
+1.doctor model ke under se user ki profile ko get karna hai.
+
+step 17.doctor ki profile ko update karna.
+1.jo doctorModel ke under user ki jo profile hai usko update karna hai

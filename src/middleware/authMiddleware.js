@@ -4,6 +4,7 @@ dotenv.config();
 
 const authMiddleware = async (req, res, next) => {
   const SECRET_KEY = process.env.SECRET_KEY;
+
   try {
     // 1.get token
     const token = req.headers["authorization"]?.split(" ")[1];

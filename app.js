@@ -6,6 +6,7 @@ import cors from "cors";
 import authRouter from "./src/routes/auth.js";
 import doctorRouter from "./src/routes/doctorRouter.js";
 import notificationRouter from "./src/routes/notificationRouter.js";
+import adminRouter from "./src/routes/adminRouter.js";
 // connect to server
 const app = express();
 
@@ -19,6 +20,7 @@ const PORT = process.env.PORT;
 app.use("/", authRouter);
 app.use("/", doctorRouter);
 app.use("/", notificationRouter);
+app.use("/", adminRouter);
 
 connectDB()
   .then(() => {
